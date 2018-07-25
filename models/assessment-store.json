@@ -1,20 +1,20 @@
 {
   "assessmentCollection": [
     {
-      "Weight": 123.3,
-      "Chest": 45.0,
-      "Thigh": 12.5,
-      "Upper Arm": 23.3,
-      "Waist": 32.0,
-      "Hips": 38.0
+      "weight": 123.3,
+      "chest": 45.0,
+      "thigh": 12.5,
+      "upperarm": 23.3,
+      "waist": 32.0,
+      "hips": 38.0
     },
     {
-      "Weight": 123.3,
-      "Chest": 45.0,
-      "Thigh": 12.0,
-      "Upper Arm": 23.3,
-      "Waist": 31.0,
-      "Hips": 36.0
+      "weight": 123.3,
+      "chest": 45.0,
+      "thigh": 12.0,
+      "upperarm": 23.3,
+      "waist": 31.0,
+      "hips": 36.0
     }
   ]
 }
