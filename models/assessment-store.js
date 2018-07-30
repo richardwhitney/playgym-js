@@ -1,6 +1,6 @@
 'use strict';
 
-
+const _ = require('lodash');
 
 const assessmentStore = {
   
@@ -11,13 +11,11 @@ const assessmentStore = {
   },
   
   getAssessment(id) {
-    let foundAssessment = null;
-    for (let assessment of this.assessmentCollection) {
-      if (id===assessment.id) {
-        foundAssessment = assessment;
-      }
-    }
-    return foundAssessment;
+    return _.find(this.assessmentCollection, {id:id});
+  },
+  
+  addAssessment(assessment) {
+    this.assessmentCollection.push(assessment);
   },
   
 };
