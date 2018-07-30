@@ -10,9 +10,17 @@ const assessmentStore = {
   
   getAssessment(id) {
     let foundAssessment = null;
-    for (let asse
+    for (let assessment of this.assessmentCollection) {
+      if (id===assessment.id) {
+        foundAssessment = assessment;
+      }
+    }
+    return foundAssessment;
+  },
+  
+};
 
 
 
 
-module.exports = assessmentCollection;
+module.exports = assessmentStore;
