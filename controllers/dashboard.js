@@ -4,14 +4,20 @@ const logger = require('../utils/logger');
 const assessmentStore = require('../models/assessment-store.js');
 const uuid = require('uuid');
 const accounts = require('./accounts.js');
+const analytics = require('../utils/analytics');
 
 const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
+    const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
+    let bmi = 0;
+    if (assessments.length > 0) {
+      
+    }
     const viewData = {
       title: 'Play Gym Dashboard',
-      assessments: assessmentStore.getUserAssessments(loggedInUser.id),
+      assessments: assessments,
       member: loggedInUser,
     };
     response.render('dashboard', viewData);
