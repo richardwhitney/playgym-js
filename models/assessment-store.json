@@ -1,6 +1,7 @@
 {
   "assessmentCollection": [
     {
+      "id": "01",
       "weight": 123.3,
       "chest": 45.0,
       "thigh": 12.5,
@@ -9,6 +10,7 @@
       "hips": 38.0
     },
     {
+      "id": "02",
       "weight": 123.3,
       "chest": 45.0,
       "thigh": 12.0,

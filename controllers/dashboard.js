@@ -2,6 +2,7 @@
 
 const logger = require('../utils/logger');
 const assessmentStore = require('../models/assessment-store.js');
+const uuid = require('uuid');
 
 const dashboard = {
   index(request, response) {
@@ -15,6 +16,7 @@ const dashboard = {
   
   addAssessment(request, response) {
     const newAssessment = {
+      id: uuid(),
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,
