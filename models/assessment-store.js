@@ -32,6 +32,10 @@ const assessmentStore = {
     this.store.save();
   },
   
+  getUserAssessments(userid) {
+    return this.store.findBy(this.collection, { userid: userid });
+  },
+  
 };
 
 module.exports = assessmentStore;
