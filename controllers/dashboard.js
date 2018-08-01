@@ -3,12 +3,14 @@
 const logger = require('../utils/logger');
 const assessmentStore = require('../models/assessment-store.js');
 const uuid = require('uuid');
+const accounts = require('./accounts.js');
 
 const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
     const viewData = {
       title: 'Play Gym Dashboard',
+      user: 
       assessments: assessmentStore.getAllAssessments(),
     };
     response.render('dashboard', viewData);
