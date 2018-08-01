@@ -12,6 +12,7 @@ const dashboard = {
     const viewData = {
       title: 'Play Gym Dashboard',
       assessments: assessmentStore.getUserAssessments(loggedInUser.id),
+      member: loggedInUser,
     };
     response.render('dashboard', viewData);
   },
