@@ -20,6 +20,7 @@ const dashboard = {
       title: 'Play Gym Dashboard',
       assessments: assessments,
       member: loggedInUser,
+      bmi: bmi,
     };
     response.render('dashboard', viewData);
   },
