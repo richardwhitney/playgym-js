@@ -13,7 +13,8 @@ const dashboard = {
     const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
     let bmi = 0;
     if (assessments.length > 0) {
-      
+      let latestAssessment = assessments[assessments.length - 1];
+      bmi = analytics.calculateBMI(loggedInUser, latestAssessment);
     }
     const viewData = {
       title: 'Play Gym Dashboard',
