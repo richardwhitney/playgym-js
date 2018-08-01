@@ -29,6 +29,26 @@
       "upperArm": "",
       "waist": "",
       "hips": ""
+    },
+    {
+      "id": "e9aefcff-620e-471b-ba4b-58360f2ee941",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "weight": "123",
+      "chest": "",
+      "thigh": "",
+      "upperArm": "",
+      "waist": "",
+      "hips": ""
+    },
+    {
+      "id": "c01c7913-5946-4816-98c8-fd054a81669b",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "weight": "",
+      "chest": "",
+      "thigh": "",
+      "upperArm": "",
+      "waist": "",
+      "hips": ""
     }
   ]
 }
