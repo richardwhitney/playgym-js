@@ -8,17 +8,19 @@ const accounts = require('./accounts.js');
 const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
+    const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: 'Play Gym Dashboard',
-      user: 
-      assessments: assessmentStore.getAllAssessments(),
+      assessments: assessmentStore.getUserAssessments(loggedInUser.id),
     };
     response.render('dashboard', viewData);
   },
   
   addAssessment(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
     const newAssessment = {
       id: uuid(),
+      userid: loggedInUser.id,
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,
