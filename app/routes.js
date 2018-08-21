@@ -20,6 +20,7 @@ router.post('/authenticate', accounts.authenticate);
 router.get('/dashboard', dashboard.index);
 router.get('/about', about.index);
 router.post('/dashboard/addassessment', dashboard.addAssessment);
+router.get('/dashboard/deleteassessment/:id', dashboard.deleteAssessment);
 router.post('/settings/editmember', settings.editMember);
 
 router.get('/trainerdashboard', trainerdashboard.index);
