@@ -23,7 +23,7 @@ const settings = {
     member.password = request.body.password;
     member.address = request.body.address;
     member.height = request.body.height;
-    member.startWeight = request.body.startingWeight;
+    member.startWeight = request.body.startWeight;
     logger.info(`Updating user settings for ${member.firstName}`);
     response.redirect('/dashboard');
   },

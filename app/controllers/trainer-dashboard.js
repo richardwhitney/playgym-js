@@ -20,7 +20,10 @@ const trainerDashboard = {
   },
   
   deleteMember(request, response) {
-    
+    const member = userStore.getUserById(request.params.id);
+    logger.debug(`Deleting User ${member.id}`);
+    userStore.removeUser(member.id);
+    response.redirect('/trainerdashboard');
   },
   
   trainerAssessment(request, response) {

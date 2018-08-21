@@ -58,7 +58,7 @@ const analytics = {
   },
   
   generateMemberStats(member) {
-    let weight = member.startingWeight;
+    let weight = member.startWeight;
     const assessments = assessmentStore.getUserAssessments(member.id);
     if (assessments.length > 0) {
       const latestAssessment = assessments[assessments.length - 1];

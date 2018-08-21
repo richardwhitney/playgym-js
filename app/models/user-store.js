@@ -14,6 +14,18 @@ const userStore = {
   
   addUser(user) {
     this.store.add(this.collection, user);
+    this.store.save();
+  },
+
+  removeUser(id) {
+    const user = this.getUserById(id);
+    this.store.remove(this.collection, user);
+    this.store.save();
+  },
+
+  removeAllUsers() {
+    this.store.removeAll(this.collection);
+    this.store.save();
   },
   
   getUserById(id) {

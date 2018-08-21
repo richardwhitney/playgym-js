@@ -21,6 +21,16 @@
       "waist": 31,
       "hips": 36,
       "comment": "Well done!"
+    },
+    {
+      "id": "bf347a3f-87ec-44a4-a71f-87dafec46eb1",
+      "userid": "f16e76a1-0299-45b0-ba0d-ebd007133903",
+      "weight": 0,
+      "chest": 0,
+      "thigh": 0,
+      "upperArm": 0,
+      "waist": 0,
+      "hips": 0
     }
   ]
 }

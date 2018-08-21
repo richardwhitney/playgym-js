@@ -36,8 +36,10 @@ const accounts = {
   register(request, response) {
     const user = request.body;
     user.id = uuid();
+    user.height = Number(request.body.height);
+    user.startWeight = Number(request.body.startWeight);
     userstore.addUser(user);
-    logger.info(`registering ${user.email}`);
+    logger.info(`registering ${user.email} ${user.id}`);
     response.redirect('/');
   },
   
