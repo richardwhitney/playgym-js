@@ -2,6 +2,7 @@
 
 const logger = require('../utils/logger');
 const accounts = require('./accounts.js');
+const userstore = require('../models/user-store');
 
 const settings = {
   index(request, response) {
@@ -22,9 +23,10 @@ const settings = {
     member.gender = request.body.gender;
     member.password = request.body.password;
     member.address = request.body.address;
-    member.height = request.body.height;
-    member.startWeight = request.body.startWeight;
+    member.height = Number(request.body.height);
+    member.startWeight = Number(request.body.startWeight);
     logger.info(`Updating user settings for ${member.firstName}`);
+    userstore.store.save();
     response.redirect('/dashboard');
   },
 };

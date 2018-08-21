@@ -39,9 +39,9 @@
       "email": "rwhitney32@gmail.com",
       "gender": "Male",
       "password": "secret",
-      "address": "Woodlands, Knockdrina",
+      "address": "Woodlands,",
       "height": 1.7,
-      "startWeight": 55,
+      "startWeight": 65,
       "id": "a05b1629-a724-4171-b652-1c3277548ebc"
     }
   ]
