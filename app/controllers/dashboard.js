@@ -11,16 +11,17 @@ const dashboard = {
     logger.info('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
     const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
-    let bmi = 0;
+    /*let bmi = 0;
     if (assessments.length > 0) {
       const latestAssessment = assessments[assessments.length - 1];
       bmi = analytics.calculateBMI(loggedInUser, latestAssessment);
-    }
+    }*/
+    const memberStats = analytics.generateMemberStats(loggedInUser);
     const viewData = {
       title: 'Play Gym Dashboard',
       assessments: assessments,
       member: loggedInUser,
-      bmi: bmi,
+      memberStats: memberStats,
     };
     response.render('dashboard', viewData);
   },
@@ -37,6 +38,24 @@ const dashboard = {
       waist: request.body.waist,
       hips: request.body.hips,
     };
+    if (newAssessment.weight === "") {
+      newAssessment.weight = 0;
+    }
+    if (newAssessment.chest === "") {
+      newAssessment.chest = 0;
+    }
+    if (newAssessment.thigh === "") {
+      newAssessment.thigh = 0;
+    }
+    if (newAssessment.upperArm === "") {
+      newAssessment.upperArm = 0;
+    }
+    if (newAssessment.waist === "") {
+      newAssessment.waist = 0;
+    }
+    if (newAssessment.hips === "") {
+      newAssessment.hips = 0;
+    }
     assessmentStore.addAssessment(newAssessment);
     response.redirect('/dashboard');
   },

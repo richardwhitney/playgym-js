@@ -1,0 +1,72 @@
+{{> welcomemenu id="signup" }}
+
+<div class="ui two column grid basic middle aligned segment">
+  <div class="column">
+    <form class="ui stacked segment form" action="/register" method="POST">
+      <h3 class="ui header">
+        Register
+      </h3>
+      <div class="two fields">
+        <div class="field">
+          <label>First Name</label>
+          <input placeholder="First Name" type="text" name="firstName">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input placeholder="Last Name" type="text" name="lastName">
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label>Email</label>
+          <input placeholder="Email" type="text" name="email">
+        </div>
+        <div class="field">
+          <label>Gender</label>
+          <div class="ui selection dropdown">
+            <input type="hidden" name="gender">
+            <i class="dropdown icon"></i>
+            <div class="default text">
+              Gender
+            </div>
+            <div class="menu">
+              <div class="item" data-value="Male">
+                Male
+              </div>
+              <div class="item" data-value="Female">
+                Female
+              </div>
+            </div>
+          </div>
+          <script>
+            $('.ui.dropdown').dropdown();
+          </script>
+        </div>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" name="password">
+      </div>
+      <div class="field">
+        <label>Address</label>
+        <input placeholder="Address" type="text" name="address">
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label>Height</label>
+          <input placeholder="0.00m" type="number" name="height" step="0.01">
+        </div>
+        <div class="field">
+          <label>Starting Weight</label>
+          <input placeholder="00.00kg" type="number" name="startWeight" step="0.01">
+        </div>
+      </div>
+      <button class="ui blue submit button">
+        Submit
+      </button>
+    </form>
+  </div>
+  <div class="column">
+    <img class="ui image" src="https://cdn.glitch.com/23eaa72d-b6e1-4ff2-8ec5-43e28a7d8872%2Fsport-and-fitness-icons.jpg?1532553981354">
+  </div>
+</div>

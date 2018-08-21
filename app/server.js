@@ -14,6 +14,7 @@ app.use(express.static('public'));
 app.use(fileUpload());
 app.engine('.hbs', exphbs({
   extname: '.hbs',
+  helpers: require('./utils/handlebar-helpers'),
   defaultLayout: 'main',
 }));
 app.set('view engine', '.hbs');
