@@ -37,6 +37,7 @@ const dashboard = {
       upperArm: request.body.upperArm,
       waist: request.body.waist,
       hips: request.body.hips,
+      date: new Date(),
     };
     if (newAssessment.weight === "") {
       newAssessment.weight = 0;
