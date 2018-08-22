@@ -34,7 +34,7 @@ const assessmentStore = {
   },
   
   getUserAssessments(userid) {
-    const userAssessments = this.store.findAll(this.collection, {userid: userid});
+    const userAssessments = this.store.findBy(this.collection, { userid: userid });
     userAssessments.sort(function compare(a, b) {
       let dateA = new Date(a.date);
       let dateB = new Date(b.date);

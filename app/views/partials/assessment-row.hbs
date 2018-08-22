@@ -6,5 +6,16 @@
   <td>{{upperArm}}</td>
   <td>{{waist}}</td>
   <td>{{hips}}</td>
+  <td>
+    {{#if_eq trend 1}}
+      <i class="large arrow alternate circle down icon green"></i>
+    {{/if_eq}}
+    {{#if_eq trend -1}}
+      <i class="large arrow alternate circle up icon red"></i>
+    {{/if_eq}}
+    {{#if_eq trend 0}}
+      <i class="large arrow alternate circle right icon orange"></i>
+    {{/if_eq}}
+  </td>
   <td>{{comment}}</td>
 </tr>
