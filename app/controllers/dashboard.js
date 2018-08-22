@@ -10,13 +10,9 @@ const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
-    const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
-    /*let bmi = 0;
-    if (assessments.length > 0) {
-      const latestAssessment = assessments[assessments.length - 1];
-      bmi = analytics.calculateBMI(loggedInUser, latestAssessment);
-    }*/
     const memberStats = analytics.generateMemberStats(loggedInUser);
+    const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
+    logger.debug(assessments);
     const viewData = {
       title: 'Play Gym Dashboard',
       assessments: assessments,

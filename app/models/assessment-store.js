@@ -1,6 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
+const logger = require('../utils/logger');
 const JsonStore = require('./json-store');
 
 const assessmentStore = {
@@ -33,7 +34,14 @@ const assessmentStore = {
   },
   
   getUserAssessments(userid) {
-    return this.store.findBy(this.collection, { userid: userid });
+    const userAssessments = this.store.findAll(this.collection, {userid: userid});
+    userAssessments.sort(function compare(a, b) {
+      let dateA = new Date(a.date);
+      let dateB = new Date(b.date);
+      return dateB - dateA;
+    });
+    return userAssessments;
+    //return this.store.findAll(this.collection, { userid: userid});
   },
   
 };

@@ -4,7 +4,7 @@ const assessmentStore = require('../models/assessment-store.js');
 const conversion = require('./conversion.js');
 const logger = require('./logger.js');
 
-const analytics = {
+const analytics  = {
   
   calculateBMI(member, weight) {
     return (weight / (member.height * member.height)).toFixed(2);
@@ -72,8 +72,42 @@ const analytics = {
       bmiCategory: bmiCategory,
       isIdealBodyWeight: isIdealBodyWeight,
     };
+    this.setAssessmentProgressByWeight(assessments);
+    logger.info(assessments);
     return stats;
-  }
+  },
+
+
+  compareAssessmentByWeight(currentAssessment, previousAssessment) {
+    if (currentAssessment.weight < previousAssessment.weight) {
+      return 1;
+    }
+    else if (currentAssessment.weight > previousAssessment.weight) {
+      return -1;
+    }
+    else {
+      return 0;
+    }
+  },
+
+  setAssessmentProgressByWeight(assessments) {
+    for (let i = 0; i < assessments.length; i++) {
+      if (i == assessments.length-1) {
+        assessments[i].trend = 1;
+      }
+      else {
+        if (this.compareAssessmentByWeight(assessments[i], assessments[i+1]) === 1) {
+          assessments[i].trend = 1;
+        }
+        else if (this.compareAssessmentByWeight(assessments[i], assessments[i+1]) === -1) {
+          assessments[i].trend = -1;
+        }
+        else {
+          assessments[i].trend = 0;
+        }
+      }
+    }
+  },
   
 };
 
