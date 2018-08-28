@@ -41,7 +41,6 @@ const assessmentStore = {
       return dateB - dateA;
     });
     return userAssessments;
-    //return this.store.findAll(this.collection, { userid: userid});
   },
   
 };
