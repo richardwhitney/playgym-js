@@ -15,6 +15,7 @@
     "fs-extra": "^6.0.1",
     "lodash": "^4.17.10",
     "lowdb": "^1.0.0",
+    "semantic-ui-calendar": "0.0.8",
     "uuid": "^3.2.1",
     "winston": "^2.4.2"
   },

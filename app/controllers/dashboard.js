@@ -2,6 +2,7 @@
 
 const logger = require('../utils/logger');
 const assessmentStore = require('../models/assessment-store.js');
+const goalStore = require('../models/goal-store');
 const uuid = require('uuid');
 const accounts = require('./accounts.js');
 const analytics = require('../utils/analytics');
@@ -12,10 +13,12 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const memberStats = analytics.generateMemberStats(loggedInUser);
     const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
+    const goals = goalStore.getUserGoals(loggedInUser.id);
     logger.debug(assessments);
     const viewData = {
       title: 'Play Gym Dashboard',
       assessments: assessments,
+      goals: goals,
       member: loggedInUser,
       memberStats: memberStats,
     };
@@ -54,6 +57,19 @@ const dashboard = {
       newAssessment.hips = 0;
     }
     assessmentStore.addAssessment(newAssessment);
+    response.redirect('/dashboard');
+  },
+
+  addGoal(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    const targetDate = new Date(request.body.date);
+    const newGoal = {
+      id: uuid(),
+      userid: loggedInUser.id,
+      date: targetDate,
+      weight: request.body.weight,
+    }
+    goalStore.addGoal(newGoal);
     response.redirect('/dashboard');
   },
 

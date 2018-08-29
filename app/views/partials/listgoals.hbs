@@ -1,0 +1,28 @@
+{{#each goals}}
+  <div class="ui segment">
+    <div class="ui three mini statistics">
+      <div class="left aligned statistic">
+        <div class="value">
+          <i class="flag checkered icon"></i>
+        </div>
+      </div>
+      <div class="statistic">
+        <div class="value">
+          {{dateString date}}
+        </div>
+        <div class="label">
+          Target Date
+        </div>
+      </div>
+      <div class="statistic">
+        <div class="value">
+          {{weight}}
+        </div>
+        <div class="label">
+          Target Weight
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+

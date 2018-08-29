@@ -1,5 +1,16 @@
 {
   "goalCollection": [
-
+    {
+      "id": "12e808f1-991e-4224-9dc4-280e63dd384c",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "2018-08-30T23:00:00.000Z",
+      "weight": "120"
+    },
+    {
+      "id": "ab1185f0-7909-47c1-9dd4-f41a24a86fde",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": null,
+      "weight": ""
+    }
   ]
 }

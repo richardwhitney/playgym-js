@@ -2,6 +2,7 @@
 
 const logger = require('../utils/logger');
 const assessmentStore = require('../models/assessment-store.js');
+const goalStore = require('../models/goal-store.js');
 const accounts = require('./accounts.js');
 const userStore = require('../models/user-store.js');
 const analytics = require('../utils/analytics');
@@ -29,10 +30,12 @@ const trainerDashboard = {
   trainerAssessment(request, response) {
     const member = userStore.getUserById(request.params.id);
     const assessments = assessmentStore.getUserAssessments(member.id);
+    const goals = goalStore.getUserGoals(member.id);
     const memberStats = analytics.generateMemberStats(member);
     const viewData = {
       title: 'Play Gym Dashboard',
       assessments: assessments,
+      goals: goals,
       member: member,
       memberStats: memberStats,
     };

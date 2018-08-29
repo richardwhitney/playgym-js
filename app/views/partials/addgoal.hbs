@@ -1,0 +1,25 @@
+<form class="ui stacked segment form" action="/dashboard/addgoal" method="POST">
+  <div class="two fields">
+    <div class="field">
+      <label>Date</label>
+      <div class="ui calendar" id="datepicker">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date" name="date">
+        </div>
+      </div>
+      <script>
+        $('#datepicker').calendar({
+          type: 'date'
+        });
+      </script>
+    </div>
+    <div class="field">
+      <label>Weight</label>
+      <input type="number" placeholder="00.00kg" name="weight">
+    </div>
+  </div>
+  <button class="ui blue submit button">
+    Add Goal
+  </button>
+</form>
