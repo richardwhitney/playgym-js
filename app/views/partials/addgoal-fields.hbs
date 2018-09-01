@@ -1,0 +1,23 @@
+<div class="two fields">
+  <div class="field">
+    <label>Date</label>
+    <div class="ui calendar" id="datepicker">
+      <div class="ui input left icon">
+        <i class="calendar icon"></i>
+        <input autocomplete="off" type="text" placeholder="Date" name="date">
+      </div>
+    </div>
+    <script>
+      $('#datepicker').calendar({
+        type: 'date'
+      });
+    </script>
+  </div>
+  <div class="field">
+    <label>Weight</label>
+    <input type="number" placeholder="00.00kg" name="weight">
+  </div>
+</div>
+<button class="ui blue submit button">
+  Add Goal
+</button>

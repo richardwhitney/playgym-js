@@ -28,5 +28,6 @@ router.get('/trainerdashboard', trainerdashboard.index);
 router.get('/trainerdashboard/deletemember/:id', trainerdashboard.deleteMember);
 router.get('/trainerassessment/:id', trainerdashboard.trainerAssessment);
 router.post('/editcomment/:id', trainerdashboard.editComment);
+router.post('/trainerdashboard/addgoal/:id', trainerdashboard.addGoal);
 
 module.exports = router;

@@ -6,6 +6,7 @@ const goalStore = require('../models/goal-store.js');
 const accounts = require('./accounts.js');
 const userStore = require('../models/user-store.js');
 const analytics = require('../utils/analytics');
+const uuid = require('uuid');
 
 const trainerDashboard = {
   
@@ -46,6 +47,19 @@ const trainerDashboard = {
     const assessmentId = request.params.id;
     const assessment = assessmentStore.getAssessment(assessmentId);
     assessment.comment = request.body.comment;
+    response.redirect('/trainerdashboard');
+  },
+
+  addGoal(request, response) {
+    const member = userStore.getUserById(request.params.id);
+    const targetDate = new Date(request.body.date);
+    const newGoal = {
+      id: uuid(),
+      userid: member.id,
+      date: targetDate,
+      weight: request.body.weight,
+    }
+    goalStore.addGoal(newGoal);
     response.redirect('/trainerdashboard');
   },
   
