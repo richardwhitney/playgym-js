@@ -1,6 +1,7 @@
 'use strict';
 
 const assessmentStore = require('../models/assessment-store.js');
+const goalStore = require('../models/goal-store.js');
 const conversion = require('./conversion.js');
 const logger = require('./logger.js');
 
@@ -60,6 +61,7 @@ const analytics  = {
   generateMemberStats(member) {
     let weight = member.startWeight;
     const assessments = assessmentStore.getUserAssessments(member.id);
+    const goals = goalStore.getUserGoals(member.id);
     if (assessments.length > 0) {
       const latestAssessment = assessments[assessments.length - 1];
       weight = latestAssessment.weight;
@@ -73,6 +75,7 @@ const analytics  = {
       isIdealBodyWeight: isIdealBodyWeight,
     };
     this.setAssessmentProgressByWeight(assessments);
+    this.setGoalStatus(goals, assessments[0]);
     logger.info(assessments);
     return stats;
   },
@@ -104,6 +107,26 @@ const analytics  = {
         }
         else {
           assessments[i].trend = 0;
+        }
+      }
+    }
+  },
+
+  setGoalStatus(goals, assessment) {
+    const today = new Date();
+    for (let i = 0; i < goals.length; i++) {
+      const goalDate = new Date(goals[i].date);
+      if (goals[i].status === "OPEN" || !goals[i].status) {
+        if (today.getTime() < goalDate.getTime()) {
+          goals[i].status = "OPEN";
+        }
+        else {
+          if (goals[i].weight >= assessment.weight) {
+            goals[i].status = "ACHIEVED";
+          }
+          else {
+            goals[i].status = "MISSED";
+          }
         }
       }
     }

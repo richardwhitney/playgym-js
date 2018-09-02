@@ -4,18 +4,34 @@
       "id": "12e808f1-991e-4224-9dc4-280e63dd384c",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "date": "2018-08-30T23:00:00.000Z",
-      "weight": "120"
+      "weight": "120",
+      "status": "MISSED"
     },
     {
       "id": "e4de5734-6c2f-4d38-bc1b-2a5dcfbcf85b",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "date": "2018-09-03T23:00:00.000Z",
-      "weight": "130"
+      "weight": "130",
+      "status": "OPEN"
     },
     {
-      "id": "aef0be7e-1df7-4b06-a169-8f9eee6fc93f",
+      "id": "87e33da1-ea2c-45c5-85d2-c4b84ec3dd2d",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "2018-09-17T23:00:00.000Z",
+      "date": "2018-08-30T23:00:00.000Z",
+      "weight": "130",
+      "status": "ACHIEVED"
+    },
+    {
+      "id": "dd4061cb-c800-4f3d-b80e-fdc0cb276bb6",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "2018-08-30T23:00:00.000Z",
+      "weight": "101",
+      "status": "MISSED"
+    },
+    {
+      "id": "ad1efc58-d31e-4aa5-80d6-577fa986444b",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "2018-09-04T23:00:00.000Z",
       "weight": "110"
     }
   ]

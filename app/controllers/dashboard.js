@@ -14,7 +14,6 @@ const dashboard = {
     const memberStats = analytics.generateMemberStats(loggedInUser);
     const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
     const goals = goalStore.getUserGoals(loggedInUser.id);
-    logger.debug(assessments);
     const viewData = {
       title: 'Play Gym Dashboard',
       assessments: assessments,
