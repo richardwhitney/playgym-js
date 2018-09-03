@@ -28,7 +28,7 @@ const analytics  = {
       return "MODERATELY OBESE";
     }
     else {
-      return "SERVERELY OBESE";
+      return "SEVERELY OBESE";
     }
   },
   
@@ -66,6 +66,7 @@ const analytics  = {
       const latestAssessment = assessments[assessments.length - 1];
       weight = latestAssessment.weight;
     }
+    this.setGoalStatus(goals, assessments[0]);
     const bmi = this.calculateBMI(member, weight);
     const bmiCategory = this.determineBMICategory(bmi);
     const isIdealBodyWeight = this.isIdealBodyWeight(member, weight);
@@ -73,9 +74,10 @@ const analytics  = {
       bmi: bmi,
       bmiCategory: bmiCategory,
       isIdealBodyWeight: isIdealBodyWeight,
+      goalsAchieved: this.getNumberGoalsAchieved(goals),
+      goalsMissed: this.getNumberGoalsMissed(goals),
     };
     this.setAssessmentProgressByWeight(assessments);
-    this.setGoalStatus(goals, assessments[0]);
     logger.info(assessments);
     return stats;
   },
@@ -131,6 +133,26 @@ const analytics  = {
       }
     }
   },
+
+  getNumberGoalsAchieved(goals) {
+    let numAchieved = 0;
+    for (let i = 0; i < goals.length; i++) {
+      if (goals[i].status === "ACHIEVED") {
+        numAchieved++;
+      }
+    }
+    return numAchieved;
+  },
+
+  getNumberGoalsMissed(goals) {
+    let numMissed = 0;
+    for (let i = 0; i < goals.length; i++) {
+      if (goals[i].status === "MISSED") {
+        numMissed++;
+      }
+    }
+    return numMissed;
+  }
   
 };
 
