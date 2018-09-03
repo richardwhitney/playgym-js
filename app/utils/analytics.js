@@ -101,15 +101,7 @@ const analytics  = {
         assessments[i].trend = 1;
       }
       else {
-        if (this.compareAssessmentByWeight(assessments[i], assessments[i+1]) === 1) {
-          assessments[i].trend = 1;
-        }
-        else if (this.compareAssessmentByWeight(assessments[i], assessments[i+1]) === -1) {
-          assessments[i].trend = -1;
-        }
-        else {
-          assessments[i].trend = 0;
-        }
+        assessments[i].trend = this.compareAssessmentByWeight(assessments[i], assessments[i+1]);
       }
     }
   },
