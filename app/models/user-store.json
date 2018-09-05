@@ -32,28 +32,6 @@
       "height": 1.5,
       "startWeight": 45.5,
       "id": "f16e76a1-0299-45b0-ba0d-ebd007133903"
-    },
-    {
-      "firstName": "Richard",
-      "lastName": "Whitney",
-      "email": "rwhitney32@gmail.com",
-      "gender": "Male",
-      "password": "secret",
-      "address": "Woodlands,",
-      "height": 1.7,
-      "startWeight": 65,
-      "id": "a05b1629-a724-4171-b652-1c3277548ebc"
-    },
-    {
-      "firstName": "Richard",
-      "lastName": "Whitney",
-      "email": "rwhitney32@gmail.com",
-      "gender": "Male",
-      "password": "secret",
-      "address": "Springfield, Mass",
-      "height": 1.71,
-      "startWeight": 70,
-      "id": "317bd472-ccfb-4ea7-a82b-1d999634760f"
     }
   ]
 }
